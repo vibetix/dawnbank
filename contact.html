@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - DawnBank</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/Images/dawnbank.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/profile.js"></script>
+  <script src="assets/js/logout.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="logo">
+        <div class="logo-circle">DB</div>
+        DawnBank
+      </a>
+      
+      <div class="desktop-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link" >Services</a>
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+        <a href="contact.html" id="active" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="desktop-actions" id="user-section">
+            <!-- AJAX will load user data here -->
+      </div>
+      
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars" id="menu-icon" onclick="openMenu()"></i>
+        <i class="fas fa-times" style="display: none;" id="close-icon" onclick="closeMenu()"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" style="background: white;">
+      
+      <div class="mobile-menu-links">
+        <a href="index.html" class="mobile-link" onclick="closeMenu()">Home</a>
+        <a href="about.html" class="mobile-link" onclick="closeMenu()">About</a>
+        <a href="services.html" class="mobile-link" onclick="closeMenu()">Services</a>
+         <a href="index.html#features" class="mobile-link" onclick="closeMenu()">Features</a>
+        <a href="index.html#testimonials" class="mobile-link" onclick="closeMenu()">Testimonials</a>
+        <a href="contact.html" id="active"class="mobile-link" onclick="closeMenu()">Contact</a>
+      </div>
+       <div class="mobile-actions" id="mobile-section">
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom:40px;">
+    <div class="container">
+      <div class="hero-content">
+          <span class="badge fade-in-down">Get in Touch</span>
+          <h1 class="section-title fade-in-down">We’re Here to Help</h1>
+          <p class="section-subtitle fade-in-up">Have questions or need assistance? Reach out to us anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon"><i class="fas fa-phone"></i></div>
+          <h3 class="feature-title">Call Us</h3>
+          <p class="feature-description">Customer Support: +1 800 123 4567</p>
+          <p class="feature-description">Business Inquiries: +1 800 987 6543</p>
+        </div>
+
+        <div class="feature-card fade-in delay-1">
+          <div class="feature-icon"><i class="fas fa-envelope"></i></div>
+          <h3 class="feature-title">Email Us</h3>
+          <p class="feature-description">Support: support@dawnbank.com</p>
+          <p class="feature-description">Business: business@dawnbank.com</p>
+        </div>
+
+        <div class="feature-card fade-in delay-2">
+          <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3 class="feature-title">Visit Us</h3>
+          <p class="feature-description">123 Bank Street, FinTech City, USA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-form section-padding">
+    <div class="container text-center">
+      <h2 class="section-title fade-in-down" style="text-align: center;">Send Us a Message</h2>
+      <p class="section-subtitle fade-in-up" style="text-align: center;">Fill out the form below and we’ll get back to you as soon as possible.</p>
+      <form class="signup-form fade-in-up">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" rows="5" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit" class="button-primary"><center>Send Message</center></button> 
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="/" class="logo footer-logo">
+            <div class="logo-circle">DB</div>
+            DawnBank
+          </a>
+          <p class="footer-description">Banking reimagined for the modern world. Simple, transparent, and secure.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Resources</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">© <span id="current-year"></span> DawnBank. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <button id="scroll-to-top" class="scroll-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/nav.js"></script>
+  <script>
+      // Mobile menu toggle
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  
+  function openMenu() {
+    mobileMenu.style.transform = "translateX(0)";
+    menuIcon.style.display = "none";
+    closeIcon.style.display = "block";
+    document.body.classList.toggle('overflow-hidden');
+  }
+  function closeMenu(){
+    mobileMenu.style.transform = "translateX(100%)";
+    menuIcon.style.display = "block";
+    closeIcon.style.display = "none";
+    document.body.classList.toggle('overflow-hidden');
+  }
+  menuIcon.addEventListener('click', openMenu);
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  </script>
+</body>
+</html>

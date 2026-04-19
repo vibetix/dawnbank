@@ -1,0 +1,718 @@
+@media (max-width:768px){
+  #menu-bar{
+    display: flex;
+  }
+  #close{
+    display: flex;
+  }
+  .sidebar{
+    display: none;
+  }
+  .main-content{
+    width: 100%;
+  }
+  .main-header{
+    width: 100%;
+  }
+  .search-container, .notification-button{
+    display: none;
+  }
+  .stat-card{
+    width: 100%;
+  }
+  .dashboard-container{
+    padding-top:120px;
+  }
+  .charts-section{
+    flex-direction: column;
+  }
+  .chart-container {
+    width: 100%;
+  }
+  #logo{
+    display: flex;
+  }
+  .chat-app{
+    width: 100vw;
+    top: 110px;
+    left: 0;
+    height: 89%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+width: 100vw;
+transform: translateX(0);
+transition: transform 0.3s ease-in-out;
+}
+.main{
+  position: fixed;
+  left: 0;
+  top: 110px;
+  width: 100vw;
+  height: 89%;
+}
+.chat-list{
+  width: 100vw;
+}
+.chat-app-sidebar.open {
+transform: translateX(-100%);
+}
+
+.menu-button {
+display: block;
+filter: invert(5%) sepia(90%) saturate(2000%) hue-rotate(240deg) brightness(50%) contrast(120%);
+}
+.menu-button img{
+  height: 36px;
+  padding-left: 10px;
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+}
+}
+@media screen and (max-width: 1024px) and (max-height: 600px) {
+  .chat-app-sidebar {
+position: relative;
+z-index: 100;
+width: 40%;
+left:40%;
+}
+}
+@media screen and (max-width: 1280px) and (max-height: 800px) {
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+width: 40%;
+left:40%;
+}
+.chat-app{
+  position: fixed;
+  top: 60%;
+    height: 88.5%;
+  }
+}
+
+@media (min-height: 844px){
+   .chat-app{
+    height: 87%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+}
+.main{
+  height: 87%;
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  padding-top: 8px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+@media (min-height: 896px){
+   .chat-app{
+    width: 100vw;
+    top: 110px;
+    left: 0;
+    height: 87.5%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+width: 100vw;
+transform: translateX(0);
+transition: transform 0.3s ease-in-out;
+}
+.main{
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 87.8%;
+}
+.chat-list{
+  width: 100vw;
+}
+.chat-app-sidebar.open {
+transform: translateX(-100%);
+}
+
+.menu-button {
+display: block;
+filter: invert(5%) sepia(90%) saturate(2000%) hue-rotate(240deg) brightness(50%) contrast(120%);
+}
+.menu-button img{
+  height: 36px;
+  padding-left: 10px;
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+
+@media (min-height: 1024px){
+   .chat-app{
+    width: 100vw;
+    top: 95px;
+    left: 0;
+    height: 90%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+width: 100vw;
+transform: translateX(0);
+transition: transform 0.3s ease-in-out;
+}
+.main{
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 89.5%;
+}
+.chat-list{
+  width: 100vw;
+}
+.chat-app-sidebar.open {
+transform: translateX(-100%);
+}
+
+.menu-button {
+display: block;
+filter: invert(5%) sepia(90%) saturate(2000%) hue-rotate(240deg) brightness(50%) contrast(120%);
+}
+.menu-button img{
+  height: 36px;
+  padding-left: 10px;
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+
+@media (min-width:820px){
+  .sidebar{
+    display: none;
+  }
+  #logo{
+    display: flex;
+  }
+  .main-content{
+    width: 100%;
+  }
+  .main-header{
+    width: 100%;
+  }
+  #menu-bar{
+    display: flex;
+  }#close{
+    display: flex;
+  }
+  .search-container, .notification-button{
+    display: none;
+  }
+  .stat-card{
+    width: 49%;
+  }
+  .dashboard-container{
+    padding-top:120px;
+  }
+  .charts-section{
+    flex-direction: column;
+  }
+  .chart-container {
+    width: 100%;
+  }
+  .chat-app{
+    width: 100vw;
+    top: 110px;
+    left: 0;
+    height: 89.5%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+
+width: 40%;
+left:0;
+/*transform: translateX(0);
+transition: transform 0.3s ease-in-out;*/
+}
+.main{
+  position: fixed;
+  left: 0;
+  width: 60%;
+  height: 89.5%;
+  left: 40%;
+}
+.chat-list{
+  width: 100%;
+}
+/*.chat-app-sidebar.open {
+transform: translateX(-100%);
+}*/
+
+.menu-button {
+display: none;
+filter: invert(5%) sepia(90%) saturate(2000%) hue-rotate(240deg) brightness(50%) contrast(120%);
+}
+.menu-button img{
+  height: 36px;
+  padding-left: 10px;
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+@media (max-height: 800px){
+   .chat-app{
+    height: 93%;
+    top: 110px;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+}
+.main{
+  height: 93%;
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  padding-top: 8px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+@media (max-height: 740px){
+   .chat-app{
+    width: 100%;
+    top: 110px;
+    left: 0;
+    height: 85%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+}
+.main{
+  height: 85%;
+}
+.chat-app-sidebar.open {
+transform: translateX(-100%);
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  padding-top: 8px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+@media (max-height: 641px){
+   .chat-app{
+    height: 91%;
+  }
+
+.main{
+  height: 91%;
+}
+
+.chat-app-sidebar.open {
+transform: translateX(-100%);
+}
+
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+@media (max-height: 600px){
+   .chat-app{
+    height: 85%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+transform: translateX(0);
+transition: transform 0.3s ease-in-out;
+}
+.main{
+  height: 85%;
+}
+
+.chat-app-sidebar.open {
+transform: translateX(-100%);
+}
+
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+
+@media (min-width:1024px){
+  .sidebar{
+    display: none;
+  }
+  .main-content{
+    width: 100%;
+  }
+  .main-header{
+    width: 100%;
+  }
+  .search-container, .notification-button{
+    display: none;
+  }
+  .stat-card{
+    width: 32.2%;
+  }
+  .dashboard-container{
+    padding-top:120px;
+  }
+  .charts-section{
+    flex-direction: column;
+  }
+  .chart-container {
+    width: 100%;
+  }
+}
+
+@media (min-width:1107px){
+ .sidebar{
+    display: flex;
+    width: 20%;
+  }
+  .main-content{
+    width: 80%;
+  }
+  .main-header{
+    width: 80%;
+  }
+  .search-container, .notification-button{
+    display: flex;
+  }
+  .stat-card{
+    width: 24%;
+  }
+  #menu-bar{
+    display: none;
+  }
+  #logo{
+    display: none;
+  }
+  .dashboard-container{
+    padding-top:120px;
+  }
+  #close{
+    display: none;
+  }
+  .charts-section{
+    flex-direction: row;
+  }
+  .chart-container {
+    width: 50%;
+  }
+}
+@media (min-height: 1180px){
+   .chat-app{
+    height: 91%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+transform: translateX(0);
+transition: transform 0.3s ease-in-out;
+}
+.main{
+  height: 91%;
+}
+
+.chat-app-sidebar.open {
+transform: translateX(-100%);
+}
+
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+@media (min-height: 1366px){
+   .chat-app{
+    height: 93%;
+  }
+.chat-app-sidebar {
+position: relative;
+z-index: 100;
+transform: translateX(0);
+transition: transform 0.3s ease-in-out;
+}
+.main{
+  height: 93%;
+}
+
+.chat-app-sidebar.open {
+transform: translateX(-100%);
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: block;
+} 
+}
+@media (min-width:1115px){
+   .chat-app{
+    position: fixed;
+    width: 80%;
+    left: 0;
+    top: 60px;
+  }
+    .chat-app-sidebar {
+position: relative;
+width: 35%;
+z-index: 100;
+left: 25%;
+}
+.main{
+  width: 52%;
+  left: 48%;
+}
+}
+@media (min-width: 1280px){
+   .chat-app{
+    position: fixed;
+    width: 80%;
+    left: 0;
+    top: 65px;
+  }
+  .chat-app-sidebar {
+position: relative;
+width: 30%;
+z-index: 100;
+left: 25%;
+}
+.chat-app-sidebar:focus{
+  outline: none; 
+}
+.main{
+  width: 56%;
+  left: 44%;
+  outline: none; 
+}
+.header-left{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.active-chat-name{
+  line-height: 36px;
+}
+.backdrop {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 50;
+}
+
+.backdrop.open {
+display: none;
+} 
+}

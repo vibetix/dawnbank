@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - DawnBank Admin</title>
+  <link rel="icon" href="../assets/Images/dawnbank.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/user_profile.js"></script>
+    <!-- Include Feather Icons as a replacement for Lucide -->
+    <style>
+      .contain {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+      }
+      .left, .right {
+          width: 48%;
+          padding: 10px;
+          border-radius: 4px;
+      }
+      .site-image {
+          max-width: 100px;
+          border-radius: 50%;
+          display: block;
+          margin-bottom: 10px;
+      }
+      input, button {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 8px;
+      }
+  </style>
+</head>
+<body>
+  <div>
+     <div class="sidebar" id="sidebar" style="background-color:#1D3B78">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">DB</div>
+          <h1 class="logo-text">DawnBank</h1>
+        </div>
+          <img id="close" src="assets/images/icons/close.png">
+             </div>
+      <nav class="sidebar-nav">
+        <a href="admin-index.html" class="nav-link">
+         <img src="assets/images/icons/home.png">
+          <span>Dashboard</span>
+        </a>
+        <a href="accounts.html" class="nav-link">
+         <img src="assets/images/icons/account.png">
+          <span>Accounts</span>
+        </a>
+        <a href="transactions.html" class="nav-link">
+          <img src="assets/images/icons/transaction.png">
+          <span>Transactions</span>
+        </a>
+        <a href="support.html" class="nav-link">
+          <img src="assets/images/icons/support.png">
+          <span>Support</span>
+        </a>
+        <a href="message.html" class="nav-link">
+          <img src="assets/images/icons/chat.png">
+          <span>Messages</span>
+        </a>
+        <a href="user.html" class="nav-link">
+          <img src="assets/images/icons/users.png">
+          <span>Users</span>
+        </a>
+        <a href="report.html" class="nav-link">
+          <img src="assets/images/icons/report.png">
+          <span>Reports</span>
+        </a>
+        <a href="settings.html" class="nav-link active">
+          <img src="assets/images/icons/settings.png">
+          <span>Settings</span>
+        </a>
+      </nav>
+       <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar">
+            <img src="https://github.com/shadcn.png" alt="User avatar">
+            <div class="avatar-fallback" style="display:none;"></div>
+          </div>
+              <div class="user-info" style="display:block;">
+              <div class="user-name">Loading...</div>
+              <div class="user-role">Admin</div>
+          </div>
+          <button class="profile-dropdown-trigger">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9">
+              <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="">Profile</a>
+                        <a href="">Logout</a>
+              </div>
+            </polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <main class="main-content">
+      <header class="main-header">
+        <div class="logo">
+          <div class="logo-icon" id="logo">DB</div>
+        </div>
+        <div class="search-container">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="search-input" placeholder="Search...">
+        </div>
+        <div class="header-actions">
+          <button class="notification-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="notification-badge"></span>
+          </button>
+          <div class="user-dropdown">
+            <div class="avatar-small">
+                <img src="https://github.com/shadcn.png" alt="User avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="avatar-fallback-small" style="display:none;"></div>
+            </div>
+            <span class="user-name-small">Loading...</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            <div class="drop" id="drop-menu">
+                <a href="">Profile</a>
+                <a href="">Logout</a>
+            </div>
+        </div>
+        </div>
+      </header>
+      <div id="menu-bar">
+        <button id="menu-image" style="background-color:transparent;border: none;">
+        <img  src="assets/images/icons/menu.png">
+        </button>
+      </div>
+    
+      <div class="dashboard-container">
+        <div class="transactions-section">
+    <div class="section-header">
+        <h3>User Account Settings</h3>
+    </div>
+    <div class="settings-form">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" placeholder="Enter first name" class="input-field">
+
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" placeholder="Enter last name" class="input-field">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter email" class="input-field">
+
+        <label for="password">New Password</label>
+        <input type="password" id="password" placeholder="Enter new password" class="input-field">
+
+        <button class="button-primary" id="update-user">Save Changes</button>
+        <p id="user-message"></p>
+    </div>
+</div>
+
+<div class="transactions-section">
+    <div class="section-header">
+        <h3>Bank Account Settings</h3>
+    </div>
+    <div class="settings-form">
+        <label for="account-number">Account Number</label>
+        <input type="text" id="account-number" placeholder="Enter account number" class="input-field">
+
+        <label for="account-type">Account Type</label>
+        <select id="account-type" class="input-field">
+            <option value="savings">Savings</option>
+            <option value="checking">Checking</option>
+            <option value="credit">Credit</option>
+        </select>
+
+        <label for="status">Account Status</label>
+        <select id="status" class="input-field">
+            <option value="active">Active</option>
+            <option value="suspended">Suspended</option>
+            <option value="closed">Closed</option>
+        </select>
+
+        <button class="button-primary" id="update-account">Update Account</button>
+        <p id="account-message"></p>
+    </div>
+</div>
+<div class="transactions-section">
+  <div class="section-header">
+      <h3>Site Info</h3>
+  </div>
+  <div class="contain">
+    <div class="left" id="site-info">
+        <p>Loading...</p>
+    </div>
+
+    <div class="right">
+      <h3>Edit Site Info</h3>
+      <form id="updateForm" enctype="multipart/form-data">
+          <input type="hidden" name="system_id" id="system_id">
+
+          <label>Name:</label>
+          <input type="text" name="name" id="name" class="input-field" required>
+
+          <label>Email:</label>
+          <input type="email" name="email" id="email" class="input-field" required>
+
+          <label>Contact:</label>
+          <input type="text" name="contact" id="contact" class="input-field" required>
+
+          <label>Address:</label>
+          <input type="text" name="address" id="address" class="input-field" required>
+
+          <label>Update Image:</label>
+          <input type="file" name="image" id="image" class="input-field">
+
+          <input type="hidden" name="current_image" id="current_image">
+
+          <button type="submit" class="button-primary" style="padding: 10px 50px;">Update</button>
+      </form>
+    </div>
+  </div>
+ 
+</div>
+      </div>
+    </main>
+  </div>
+</body>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/admin.js"></script>
+<script>
+  feather.replace();
+</script>
+<script>
+  $(document).ready(function() {
+      // Fetch system info
+      function fetchSystemInfo() {
+          $.ajax({
+              url: "../includes/fetch_system.php",
+              type: "GET",
+              dataType: "json",
+              success: function(response) {
+                  if (response.error) {
+                      $("#site-info").html("<p>" + response.error + "</p>");
+                  } else {
+                      $("#site-info").html(`
+                          <div class="site-info">
+                              <img src="${response.image}" alt="Site Image" class="site-image">
+                              <p><strong>Name:</strong> ${response.name}</p>
+                              <p><strong>Email:</strong> ${response.email}</p>
+                              <p><strong>Contact:</strong> ${response.contact}</p>
+                              <p><strong>Address:</strong> ${response.address}</p>
+                              <p><strong>Created:</strong> ${response.creaeted}</p>
+                          </div>
+                      `);
+  
+                      // Populate form fields
+                      $("#system_id").val(response.system_id);
+                      $("#name").val(response.name);
+                      $("#email").val(response.email);
+                      $("#contact").val(response.contact);
+                      $("#address").val(response.address);
+                      $("#current_image").val(response.image);
+                  }
+              }
+          });
+      }
+  
+      fetchSystemInfo(); // Load data on page load
+  
+      // Submit update form
+      $("#updateForm").submit(function(e) {
+          e.preventDefault();
+          var formData = new FormData(this);
+  
+          $.ajax({
+              url: "update_system.php",
+              type: "POST",
+              data: formData,
+              contentType: false,
+              processData: false,
+              dataType: "json",
+              success: function(response) {
+                  if (response.success) {
+                      alert("Update Successful!");
+                      fetchSystemInfo(); // Refresh data
+                  } else {
+                      alert("Update Failed!");
+                  }
+              }
+          });
+      });
+  });
+  </script>
+</html>

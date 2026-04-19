@@ -1,0 +1,50 @@
+# Database Configuration
+includes/connect.php
+includes/debug_log.txt
+
+# Email Configuration
+includes/phpmailer_config.php
+
+# Uploaded Files
+includes/uploads/*
+!includes/uploads/.gitkeep
+uploads/*
+!uploads/.gitkeep
+users/*
+!users/.gitkeep
+
+# Composer
+vendor/
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# System Files
+.env
+.env.local
+*.log
+
+# Node modules (if any)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Temporary Files
+*.tmp
+*.bak
+*.backup

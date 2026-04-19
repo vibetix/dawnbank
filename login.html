@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DawnBank - Modern Banking Solution</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/Images/dawnbank.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="logo">
+        <div class="logo-circle">DB</div>
+        DawnBank
+      </a>
+      
+      <div class="desktop-menu">
+        <a href="index.html" id="active" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link" >Services</a>
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="desktop-actions">
+        <button class="sign-in-btn"><a href="login.html">Sign In</a></button>
+        <button class="button-primary">
+          <a href="index.html#signup">Open Account</a>
+        </button>
+      </div>
+      
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars" id="menu-icon" onclick="openMenu()"></i>
+        <i class="fas fa-times" style="display: none;" id="close-icon" onclick="closeMenu()"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" style="background: white;">
+      
+      <div class="mobile-menu-links">
+        <a href="index.html" id="active" class="mobile-link" onclick="closeMenu()">Home</a>
+        <a href="about.html" class="mobile-link" onclick="closeMenu()">About</a>
+        <a href="services.html"  class="mobile-link" onclick="closeMenu()">Services</a>
+        <a href="#features" class="mobile-link" onclick="closeMenu()">Features</a>
+        <a href="#testimonials" class="mobile-link" onclick="closeMenu()">Testimonials</a>
+        <a href="contact.html" class="mobile-link" onclick="closeMenu()">Contact</a>
+      </div>
+      <div class="mobile-actions">
+        <button class="mobile-signin-btn"><a href="login.html">Sign In</a></button>
+        <button class="button-primary mobile-primary-btn">
+          <a href="index.html#signup" onclick="closeMenu()">Open Account</a></button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- CTA section -->
+<section id="login" class="cta">
+    <div class="container">
+      <div id="message-container" style="top:16%;"></div>
+        <div class="cta-grid" style="display: flex; justify-content: center; align-items: center;">
+            <div id="login-form-container" class="cta-form-container" style="text-align: left; width: 100%; max-width: 400px;">
+                <div class="cta-form-wrapper">
+                    <div class="cta-form">
+                        <h3 class="form-title" style="text-align:center;">Sign In to Your Account</h3>
+                        
+                        <form class="login-form">                          
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group" style="position: relative;">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                                <i class="fa-regular fa-eye" id="togglePassword" style="position: absolute; right: 10px; top: 38px; cursor: pointer;"></i>
+                            </div>
+                            
+                            <div class="form-checkbox" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <input type="checkbox" id="remember">
+                                    <label for="remember">Remember me</label>
+                                </div>
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            
+                            <center><button type="submit" class="button-primary form-submit">Login</button></center>
+                            
+                            <p class="form-signup" style="text-align:center;">Don't have an account? <a href="index.html#signup">Sign up</a></p>
+                        </form>
+
+                    </div>
+                </div>
+                    <div class="floating-circle-cta-1"></div>
+                    <div class="floating-circle-cta-2"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+         document.getElementById("togglePassword").addEventListener("click", function() {
+            var passwordInput = document.getElementById("password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                this.classList.remove("fa-regular", "fa-eye");
+                this.classList.add("fa-regular", "fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                this.classList.remove("fa-regular", "fa-eye-slash");
+                this.classList.add("fa-regular", "fa-eye");
+            }
+        });
+    </script>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="/" class="logo footer-logo">
+            <div class="logo-circle">DB</div>
+            DawnBank
+          </a>
+          <p class="footer-description">Banking reimagined for the modern world. Simple, transparent, and secure.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Resources</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">© <span id="current-year"></span> DawnBank. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scroll-to-top" class="scroll-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/register_ajax.js"></script>
+  <script src="assets/js/login-ajax.js"></script>
+  <script>
+      // Mobile menu toggle
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  
+  function openMenu() {
+    mobileMenu.style.transform = "translateX(0)";
+    menuIcon.style.display = "none";
+    closeIcon.style.display = "block";
+    document.body.classList.toggle('overflow-hidden');
+  }
+  function closeMenu(){
+    mobileMenu.style.transform = "translateX(100%)";
+    menuIcon.style.display = "block";
+    closeIcon.style.display = "none";
+    document.body.classList.toggle('overflow-hidden');
+  }
+  menuIcon.addEventListener('click', openMenu);
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  </script>
+</body>
+</html>

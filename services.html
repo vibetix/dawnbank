@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - DawnBank</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/Images/dawnbank.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="assets/js/profile.js"></script>
+  <script src="assets/js/logout.js"></script>
+</head>
+<body>
+   <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="logo">
+        <div class="logo-circle">DB</div>
+        DawnBank
+      </a>
+      
+      <div class="desktop-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" id="active" class="nav-link" >Services</a>
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="desktop-actions" id="user-section">
+            <!-- AJAX will load user data here -->
+      </div>
+      
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars" id="menu-icon" onclick="openMenu()"></i>
+        <i class="fas fa-times" style="display: none;" id="close-icon" onclick="closeMenu()"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" style="background: white;">
+      
+      <div class="mobile-menu-links">
+        <a href="index.html" class="mobile-link" onclick="closeMenu()">Home</a>
+        <a href="about.html" class="mobile-link" onclick="closeMenu()">About</a>
+        <a href="services.html" id="active" class="mobile-link" onclick="closeMenu()">Services</a>
+         <a href="index.html#features" class="mobile-link" onclick="closeMenu()">Features</a>
+        <a href="index.html#testimonials" class="mobile-link" onclick="closeMenu()">Testimonials</a>
+        <a href="contact.html" class="mobile-link" onclick="closeMenu()">Contact</a>
+      </div>
+      <div class="mobile-actions" id="mobile-section">
+      </div>
+    </div>
+  </nav>
+
+ <section class="hero" style="padding-bottom:40px;">
+    <div class="container">
+      <div class="hero-content">
+       <span class="badge fade-in-down">Our Banking Services</span>
+        
+        <h1 class="hero-title fade-in-down">Banking Solutions Tailored for You</h1>
+         <p class="hero-text fade-in-down">Explore our comprehensive range of financial services designed to simplify your banking experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" style="margin-bottom: 40px;">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon"><i class="fas fa-user"></i></div>
+          <h3 class="feature-title">Personal Banking</h3>
+          <p class="feature-description">Manage your finances with savings and checking accounts, designed for everyday banking needs.</p>
+        </div>
+
+        <div class="feature-card fade-in delay-1">
+          <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+          <h3 class="feature-title">Business Banking</h3>
+          <p class="feature-description">Comprehensive financial solutions for businesses, including merchant services and business loans.</p>
+        </div>
+
+        <div class="feature-card fade-in delay-2">
+          <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+          <h3 class="feature-title">Credit & Debit Cards</h3>
+          <p class="feature-description">Enjoy seamless transactions with our secure and rewards-packed banking cards.</p>
+        </div>
+
+        <div class="feature-card fade-in delay-3">
+          <div class="feature-icon"><i class="fas fa-home"></i></div>
+          <h3 class="feature-title">Loans & Mortgages</h3>
+          <p class="feature-description">Access flexible loan options for personal, business, and home financing needs.</p>
+        </div>
+
+        <div class="feature-card fade-in delay-4">
+          <div class="feature-icon"><i class="fas fa-piggy-bank"></i></div>
+          <h3 class="feature-title">Savings & Investments</h3>
+          <p class="feature-description">Grow your wealth with our high-yield savings accounts and smart investment plans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta section-padding" style="display:flex; justify-content: center; align-items: center; text-align:center;">
+    <div class="container text-center">
+      <h2 class="section-title fade-in-up">Experience Banking Like Never Before</h2>
+      <p class="section-subtitle fade-in-up">Join thousands of satisfied customers who trust DawnBank for their financial needs.</p>
+      <button class="button-primary fade-in-up"><a href="index.html#signup">Open an Account Today</a></button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="/" class="logo footer-logo">
+            <div class="logo-circle">DB</div>
+            DawnBank
+          </a>
+          <p class="footer-description">Banking reimagined for the modern world. Simple, transparent, and secure.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Resources</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">© <span id="current-year"></span> DawnBank. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <button id="scroll-to-top" class="scroll-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/nav.js"></script>
+  <script>
+      // Mobile menu toggle
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  
+  function openMenu() {
+    mobileMenu.style.transform = "translateX(0)";
+    menuIcon.style.display = "none";
+    closeIcon.style.display = "block";
+    document.body.classList.toggle('overflow-hidden');
+  }
+  function closeMenu(){
+    mobileMenu.style.transform = "translateX(100%)";
+    menuIcon.style.display = "block";
+    closeIcon.style.display = "none";
+    document.body.classList.toggle('overflow-hidden');
+  }
+  menuIcon.addEventListener('click', openMenu);
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  </script>
+</body>
+</html>

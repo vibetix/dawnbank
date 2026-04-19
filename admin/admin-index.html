@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DawnBank - Admin Dashboard</title>
+  <link rel="icon" href="../assets/Images/dawnbank.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Include Feather Icons as a replacement for Lucide -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/user_profile.js"></script>
+    <script src="assets/js/pending_user_approvals.js"></script>
+</head>
+<body>
+  <div>
+    <div class="sidebar" id="sidebar" style="background-color:#1D3B78">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">DB</div>
+          <h1 class="logo-text">DawnBank</h1>
+        </div>
+          <img id="close" src="assets/images/icons/close.png">
+             </div>
+      <nav class="sidebar-nav">
+        <a href="admin-index.html" class="nav-link active">
+         <img src="assets/images/icons/home.png">
+          <span>Dashboard</span>
+        </a>
+        <a href="accounts.html" class="nav-link">
+         <img src="assets/images/icons/account.png">
+          <span>Accounts</span>
+        </a>
+        <a href="transactions.html" class="nav-link">
+          <img src="assets/images/icons/transaction.png">
+          <span>Transactions</span>
+        </a>
+        <a href="support.html" class="nav-link">
+          <img src="assets/images/icons/support.png">
+          <span>Support</span>
+        </a>
+        <a href="message.html" class="nav-link">
+          <img src="assets/images/icons/chat.png">
+          <span>Messages</span>
+        </a>
+        <a href="user.html" class="nav-link">
+          <img src="assets/images/icons/users.png">
+          <span>Users</span>
+        </a>
+        <a href="report.html" class="nav-link">
+          <img src="assets/images/icons/report.png">
+          <span>Reports</span>
+        </a>
+        <a href="settings.html" class="nav-link">
+          <img src="assets/images/icons/settings.png">
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar">
+              <img src="https://github.com/shadcn.png" alt="User avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback" style="display:none;"></div>
+          </div>
+          <div class="user-info" style="display:block;">
+              <div class="user-name">Loading...</div>
+              <div class="user-role">Admin</div>
+          </div>
+          <button class="profile-dropdown-trigger">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+          </button>
+      </div>
+
+      </div>
+    </div>
+    <main class="main-content">
+      <!-- Header -->
+      <header class="main-header">
+        <div class="logo">
+          <div class="logo-icon" id="logo">DB</div>
+        </div>
+        <div class="search-container">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="search-input" placeholder="Search...">
+        </div>
+        <div class="header-actions">
+          <button class="notification-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="notification-badge"></span>
+          </button>
+         <div class="user-dropdown">
+            <div class="avatar-small">
+                <img src="https://github.com/shadcn.png" alt="User avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="avatar-fallback-small" style="display:none;"></div>
+            </div>
+            <span class="user-name-small">Loading...</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            <div class="drop" id="drop-menu">
+                <a href="">Profile</a>
+                <a href="">Logout</a>
+            </div>
+        </div>
+
+        </div>
+      </header>
+      <div id="menu-bar">
+        <button id="menu-image" style="background-color:transparent;border: none;">
+        <img  src="assets/images/icons/menu.png">
+        </button>
+      </div>
+      <!-- Dashboard Content -->
+      <div class="dashboard-container">
+        <div class="welcome-card">
+          <div>
+            <h1 class="welcome-title"></h1>
+            <p class="welcome-subtitle">Here's a quick overview of your financial situation today.</p>
+          </div>
+        </div>
+        
+        <div class="stats-container" >
+          <div class="stat-card" style="animation-delay: 0ms;">
+              <div class="stat-content">
+                <div>
+                  <p class="stat-title">Total Users</p>
+                  <h4 class="stat-value"></h4>
+                  <div class="stat-trend positive">
+                    <span>↑ 12.5%</span>
+                    <span class="trend-period">vs last month</span>
+                  </div>
+                </div>
+                <div class="stat-icon">
+                  <img src="assets/images/icons/group.png">
+                </div>
+              </div>
+            </div>
+            
+            <div class="stat-card" style="animation-delay: 100ms;">
+              <div class="stat-content">
+                <div>
+                  <p class="stat-title">Total Transactions</p>
+                  <h4 class="stat-value"></h4>
+                  <div class="stat-trend positive">
+                    <span>↑ 8.2%</span>
+                    <span class="trend-period">vs last month</span>
+                  </div>
+                </div>
+                <div class="stat-icon">
+                  <img src="assets/images/icons/transaction (1).png">
+                </div>
+              </div>
+            </div>
+            
+            <div class="stat-card" style="animation-delay: 200ms;">
+              <div class="stat-content">
+                <div>
+                  <p class="stat-title">Loan Requests</p>
+                  <h4 class="stat-value"></h4>
+                  <div class="stat-trend negative">
+                    <span>↓ 3.1%</span>
+                    <span class="trend-period">vs last month</span>
+                  </div>
+                </div>
+                <div class="stat-icon">
+                  <img src="assets/images/icons/loan.png">
+                </div>
+              </div>
+            </div>
+            
+            <div class="stat-card" style="animation-delay: 300ms;">
+              <div class="stat-content">
+                <div>
+                  <p class="stat-title">Revenue</p>
+                  <h4 class="stat-value"></h4>
+                  <div class="stat-trend positive">
+                    <span>↑ 10.5%</span>
+                    <span class="trend-period">vs last month</span>
+                  </div>
+                </div>
+                <div class="stat-icon">
+                  <img src="assets/images/icons/revenue.png">
+                </div>
+              </div>
+            </div>
+          <div class="stat-card" style="animation-delay: 0ms;">
+              <div class="stat-content">
+                <div>
+                  <p class="stat-title">Total Balance</p>
+                  <h4 class="stat-value"></h4>
+                  <div class="stat-trend positive">
+                    <span>↑ 12.5%</span>
+                    <span class="trend-period">Across all accounts</span>
+                  </div>
+                </div>
+                <div class="stat-icon">
+                  <img src="assets/images/icons/cash.png">
+                </div>
+              </div>
+            </div>
+            
+            <div class="stat-card" style="animation-delay: 100ms;">
+              <div class="stat-content">
+                <div>
+                  <p class="stat-title">Total Deposits</p>
+                  <h4 class="stat-value"></h4>
+                  <div class="stat-trend positive">
+                    <span>↑ 8.2%</span>
+                    <span class="trend-period">vs last month</span>
+                  </div>
+                </div>
+                <div class="stat-icon">
+                  <img src="assets/images/icons/wallet.png">
+                </div>
+              </div>
+            </div>
+            
+            <div class="stat-card" style="animation-delay: 200ms;">
+              <div class="stat-content">
+                <div>
+                  <p class="stat-title">Total Withdrawals</p>
+                  <h4 class="stat-value"></h4>
+                  <div class="stat-trend negative">
+                    <span>↓ 3.1%</span>
+                    <span class="trend-period">vs last month</span>
+                  </div>
+                </div>
+                <div class="stat-icon">
+                  <img src="assets/images/icons/withdraw.png">
+                </div>
+              </div>
+            </div>
+            
+            <div class="stat-card" style="animation-delay: 300ms;">
+              <div class="stat-content">
+                <div>
+                  <p class="stat-title">Total Transfers</p>
+                  <h4 class="stat-value"></h4>
+                  <div class="stat-trend positive">
+                    <span>↑ 10.5%</span>
+                    <span class="trend-period">vs last month</span>
+                  </div>
+                </div>
+                <div class="stat-icon">
+                  <img src="assets/images/icons/transference.png">
+                </div>
+              </div>
+            </div>
+          
+        </div>
+
+            <div class="charts-section">
+            <div class="chart-container user-growth-chart">
+              <div class="chart-header">
+                <h3>User Growth</h3>
+                <p>New user accounts over the past year</p>
+              </div>
+              <div class="chart-body">
+                <canvas id="userGrowthChart"></canvas>
+              </div>
+            </div>
+            
+            <div class="chart-container revenue-breakdown-chart">
+              <div class="chart-header">
+                <h3>Transaction Breakdown</h3>
+                <p>Distribution of Transactions</p>
+              </div>
+              <div class="chart-body">
+                <div class="pie-chart-container">
+                  <canvas id="revenueBreakdownChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+   
+          <div class="transactions-section">
+            <div class="section-header">
+              <h3>Pending Account Approvals</h3>
+            </div>
+            <div class="table-container">
+              <table class="transactions-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <button class="sort-button" data-sort="no">
+                        #
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="id">
+                        User ID
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="user">
+                        Username
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="status">
+                        Status
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    
+                    <th>
+                      <button class="sort-button" data-sort="date">
+                        Date & Time
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="type">
+                        Action
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="approvalTableBody">
+                  <!-- Transaction rows will be populated via JavaScript -->
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span class="showing-text">Showing 5 of 145 Account Approvals</span>
+              <div class="pagination">
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">3</button>
+                <span class="pagination-ellipsis">...</span>
+                <button class="pagination-button">29</button>
+              </div>
+            </div>
+          </div>
+          <div class="transactions-section">
+            <div class="section-header">
+              <h3>Pending Loan Approvals</h3>
+            </div>
+            <div class="table-container">
+              <table class="transactions-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <button class="sort-button" data-sort="no">
+                        #
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="id">
+                        Username
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="user">
+                        Loan Amount
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    
+                    <th>
+                      <button class="sort-button" data-sort="date">
+                        Description
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="status">
+                        Status
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    
+                    <th>
+                      <button class="sort-button" data-sort="type">
+                        Action
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="loanApprovalTableBody">
+                  <!-- Transaction rows will be populated via JavaScript -->
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span class="showing-text">Showing 5 of 145 Account Approvals</span>
+              <div class="pagination">
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">3</button>
+                <span class="pagination-ellipsis">...</span>
+                <button class="pagination-button">29</button>
+              </div>
+            </div>
+          </div>
+            <!-- Recent Transactions Table -->
+          <div class="transactions-section">
+            <div class="section-header">
+              <h3>Recent Transactions</h3>
+            </div>
+            <div class="table-container">
+              <table class="transactions-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <button class="sort-button" data-sort="id">
+                        Transaction ID
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="user">
+                        User
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="amount">
+                        Amount
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="status">
+                        Status
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="type">
+                        Type
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="sort-button" data-sort="date">
+                        Date & Time
+                        <i data-feather="arrow-up-down" class="sort-icon"></i>
+                      </button>
+                    </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="transactionsTableBody">
+                  <!-- Transaction rows will be populated via JavaScript -->
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span class="showing-text">Showing 5 of 145 transactions</span>
+              <div class="pagination">
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">3</button>
+                <span class="pagination-ellipsis">...</span>
+                <button class="pagination-button">29</button>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+<script src="assets/js/transactions.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/stats.js"></script>
+<script src="assets/js/chart_data.js"></script>
+<script src="assets/js/pending_loans.js"></script>
+<!-- Chart.js for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/admin.js"></script>
+
+</html>
+
+
