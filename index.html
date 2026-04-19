@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DawnBank - Modern Banking Solution</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="assets/Images/dawnbank.ico" type="image/x-icon" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/profile.js"></script>
+  <style>
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="logo">
+        <div class="logo-circle">DB</div>
+        DawnBank
+      </a>
+      
+      <div class="desktop-menu">
+        <a href="#" id="active" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="desktop-actions" id="user-section">
+            <!-- AJAX will load user data here -->
+      </div>
+
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars" id="menu-icon" onclick="openMenu()"></i>
+            <i class="fas fa-times" style="display: none;" id="close-icon" onclick="closeMenu()"></i>
+        </button>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" style="background: white;">
+      
+      <div class="mobile-menu-links">
+        <a href="index.html" id="active" class="mobile-link" onclick="closeMenu()">Home</a>
+        <a href="about.html" class="mobile-link" onclick="closeMenu()">About</a>
+        <a href="services.html" class="mobile-link" onclick="closeMenu()">Services</a>
+        <a href="#features" class="mobile-link" onclick="closeMenu()">Features</a>
+        <a href="#testimonials" class="mobile-link" onclick="closeMenu()">Testimonials</a>
+        <a href="contact.html" class="mobile-link" onclick="closeMenu()">Contact</a>
+      </div>
+      <div class="mobile-actions" id="mobile-section">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="badge fade-in-down">Banking for the modern world</span>
+        
+        <h1 class="hero-title fade-in-down">Banking that works <span class="accent">for you</span>, not against you</h1>
+        
+        <p class="hero-text fade-in-down">Simple, transparent, and secure banking designed for how you live today. No hidden fees, no complexity, just banking that puts you first.</p>
+        
+        <div class="hero-buttons fade-in-up">
+          <button class="button-primary"><a href="#signup"> Open Free Account</a></button>
+          <button class="button-secondary" id="about-btn" style="background-color:var(--bank-600); display: none; color: white;"><a href="about.html">Learn More</a> <i class="fas fa-arrow-right"></i></button>
+          <button class="button-secondary"><a href="services.html">Explore Services</a><i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+      
+      <div class="hero-image-container">
+        <div class="hero-image fade-in-up">
+          <div class="hero-image-gradient">
+            <div class="hero-image-inner">
+              <img src="https://placehold.co/1200x700/f0f7ff/006fbf?text=Banking+Dashboard" alt="Banking Dashboard Interface">
+            </div>
+          </div>
+        </div>
+        
+        <div class="floating-cards">
+          <div class="floating-card float-animation">
+            <div class="floating-card-content">
+              <div class="floating-card-icon">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <div>
+                <p class="floating-card-title">Instant Payments</p>
+                <p class="floating-card-subtitle">Fast & Secure</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="floating-card float-animation delay-1">
+            <div class="floating-card-content">
+              <div class="floating-card-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div>
+                <p class="floating-card-title">Bank-grade Security</p>
+                <p class="floating-card-subtitle">Your money, protected</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="floating-card float-animation delay-2">
+            <div class="floating-card-content">
+              <div class="floating-card-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div>
+                <p class="floating-card-title">Smart Insights</p>
+                <p class="floating-card-subtitle">Track your spending</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By section -->
+  <section class="trusted-by">
+    <div class="container">
+      <p class="trusted-by-title">TRUSTED BY THOUSANDS OF CUSTOMERS</p>
+      <div class="trusted-by-brands">
+        <div class="brand-item fade-in">TechCrunch</div>
+        <div class="brand-item fade-in delay-1">Forbes</div>
+        <div class="brand-item fade-in delay-2">Business Insider</div>
+        <div class="brand-item fade-in delay-3">Financial Times</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="features-header">
+        <span class="badge">Why Choose Us</span>
+        <h2 class="section-title">Banking Features Designed For You</h2>
+        <p class="section-subtitle">Experience the next generation of banking with features that simplify your financial life and help you make better decisions.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <h3 class="feature-title">Modern Cards</h3>
+          <p class="feature-description">Virtual and physical cards with real-time controls and instant notifications for every transaction.</p>
+        </div>
+        
+        <div class="feature-card fade-in delay-1">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="feature-title">Mobile Banking</h3>
+          <p class="feature-description">Manage your finances on the go with our intuitive mobile app, designed for seamless banking.</p>
+        </div>
+        
+        <div class="feature-card fade-in delay-2">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="feature-title">Secure Banking</h3>
+          <p class="feature-description">Bank-grade encryption and advanced security features keep your money and data protected.</p>
+        </div>
+        
+        <div class="feature-card fade-in delay-3">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="feature-title">Instant Transfers</h3>
+          <p class="feature-description">Send and receive money instantly, 24/7, with no hidden fees or waiting periods.</p>
+        </div>
+        
+        <div class="feature-card fade-in delay-4">
+          <div class="feature-icon">
+            <i class="fas fa-piggy-bank"></i>
+          </div>
+          <h3 class="feature-title">Smart Savings</h3>
+          <p class="feature-description">Automated savings features help you reach your financial goals without thinking about it.</p>
+        </div>
+        
+        <div class="feature-card fade-in delay-5">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="feature-title">Financial Insights</h3>
+          <p class="feature-description">Get personalized insights on your spending habits and recommendations to improve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-in">
+          <h3 class="stat-number">99.9%</h3>
+          <p class="stat-label">Uptime</p>
+        </div>
+        
+        <div class="stat-item fade-in delay-1">
+          <h3 class="stat-number">24/7</h3>
+          <p class="stat-label">Customer Support</p>
+        </div>
+        
+        <div class="stat-item fade-in delay-2">
+          <h3 class="stat-number">50K+</h3>
+          <p class="stat-label">Active Users</p>
+        </div>
+        
+        <div class="stat-item fade-in delay-3">
+          <h3 class="stat-number">$10M+</h3>
+          <p class="stat-label">Transactions Daily</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div>
+          <span class="badge">Client Stories</span>
+          <h2 class="section-title">What Our Customers Are Saying</h2>
+          <p class="section-subtitle">Don't just take our word for it. Hear from people who have transformed their banking experience with DawnBank.</p>
+        </div>
+        
+        <div class="testimonial-controls">
+          <button class="control-btn" id="prev-testimonial" disabled>
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="control-btn" id="next-testimonial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="testimonials-container" id="testimonials-container">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-content">"DawnBank has completely transformed how I manage my business finances. The real-time notifications and easy-to-use interface save me hours every week."</p>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/300/f0f7ff/006fbf?text=SJ" alt="Sarah Johnson" class="testimonial-avatar">
+            <div>
+              <h4 class="testimonial-name">Sarah Johnson</h4>
+              <p class="testimonial-role">Small Business Owner</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card fade-in delay-1">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-content">"I've tried many digital banks, but none match the seamless experience of DawnBank. The instant transfers and spending insights have helped me save more than ever."</p>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/300/f0f7ff/006fbf?text=MC" alt="Michael Chen" class="testimonial-avatar">
+            <div>
+              <h4 class="testimonial-name">Michael Chen</h4>
+              <p class="testimonial-role">Software Engineer</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card fade-in delay-2">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-content">"As a freelancer, I need banking that understands my irregular income. DawnBank's smart saving features have helped me build a safety net without even thinking about it."</p>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/300/f0f7ff/006fbf?text=OR" alt="Olivia Rodriguez" class="testimonial-avatar">
+            <div>
+              <h4 class="testimonial-name">Olivia Rodriguez</h4>
+              <p class="testimonial-role">Freelance Designer</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card fade-in delay-3">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-content">"Starting my career with student loans was stressful, but DawnBank's budgeting tools have made managing my finances so much easier. I'm actually saving money now!"</p>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/300/f0f7ff/006fbf?text=JW" alt="James Wilson" class="testimonial-avatar">
+            <div>
+              <h4 class="testimonial-name">James Wilson</h4>
+              <p class="testimonial-role">Recent Graduate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features highlight section -->
+  <section class="features-highlight">
+    <div class="container">
+      <div class="features-highlight-grid">
+        <div class="features-text fade-in-left">
+          <span class="badge">Smart Banking</span>
+          <h2 class="section-title">Banking that adapts to your lifestyle</h2>
+          <p class="section-subtitle">Our intelligent banking system learns from your habits and provides personalized insights to help you save more and spend wisely.</p>
+          
+          <div class="highlight-features">
+            <div class="highlight-feature">
+              <div class="highlight-feature-icon">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <div>
+                <h3 class="highlight-feature-title">Intelligent Spending Categories</h3>
+                <p class="highlight-feature-description">Automatically categorizes your transactions and identifies patterns to help you budget better.</p>
+              </div>
+            </div>
+            
+            <div class="highlight-feature">
+              <div class="highlight-feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div>
+                <h3 class="highlight-feature-title">Fraud Detection</h3>
+                <p class="highlight-feature-description">Advanced algorithms detect unusual activity and alert you instantly to prevent fraud.</p>
+              </div>
+            </div>
+            
+            <div class="highlight-feature">
+              <div class="highlight-feature-icon">
+                <i class="fas fa-headphones"></i>
+              </div>
+              <div>
+                <h3 class="highlight-feature-title">Premium Support</h3>
+                <p class="highlight-feature-description">Get personalized help whenever you need it with our dedicated support team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="features-image fade-in-right">
+          <div class="app-image">
+            <img src="https://placehold.co/600x800/f0f7ff/006fbf?text=Mobile+App" alt="DawnBank Mobile App">
+          </div>
+          <div class="floating-circle-1"></div>
+          <div class="floating-circle-2"></div>
+          <div class="floating-circle-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section id="contact" class="cta">
+    <div class="container">
+      <div class="cta-grid">
+        <div class="cta-text fade-in-left">
+          <span class="badge">Get Started Today</span>
+          <h2 class="section-title">Ready to experience modern banking?</h2>
+          <p class="section-subtitle">Join thousands of satisfied customers who have switched to DawnBank. Open an account in minutes and start enjoying banking that puts you first.</p>
+          
+          <ul class="cta-benefits">
+            <li><span class="bullet"></span>No monthly fees or minimum balance</li>
+            <li><span class="bullet"></span>24/7 customer support via chat, email, or phone</li>
+            <li><span class="bullet"></span>Secure banking with advanced encryption</li>
+            <li><span class="bullet"></span>Smart budgeting and financial insights</li>
+          </ul>
+          
+          <div class="cta-buttons">
+            <button class="button-primary"><a href="#signup"> Open Free Account</a></button>
+            <button class="button-secondary"><a href="about.html">Learn More</a> <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div id="signup" class="cta-form-container fade-in-right">
+          <div id="message-container"></div>
+          <div class="cta-form-wrapper">
+            <div class="cta-form">
+              <h3 class="form-title" style="text-align: center;">Create your account</h3>
+              
+                <form class="signup-form fade-in-up">
+                    <!-- Progress Bar -->
+                    <div class="progress-bar">
+                        <div class="progress-step active" id="step-indicator-1">1</div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step" id="step-indicator-2">2</div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step" id="step-indicator-3">3</div>
+                    </div>
+
+                    <!-- Step 1: Personal Details -->
+                    <div class="form-section active" id="step-1">
+                        <h3>Step 1: Personal Details</h3>
+
+                        <div class="form-group">
+                            <label for="firstName"><i class="fas fa-user"></i> First Name</label>
+                            <input type="text" id="firstName" placeholder="Enter your first name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName"><i class="fas fa-user"></i> Last Name</label>
+                            <input type="text" id="lastName" placeholder="Enter your last name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob"><i class="fas fa-calendar"></i> Date of Birth</label>
+                            <input type="date" id="dob" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+
+                        <button type="button" class="button-primary next-btn" onclick="nextStep(2)">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Step 2: Address Information -->
+                    <div class="form-section" id="step-2">
+                        <h3>Step 2: Address Details</h3>
+
+                        <div class="form-group">
+                            <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
+                            <input type="text" id="address" placeholder="Enter your address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country"><i class="fas fa-globe"></i> Country</label>
+                            <input type="text" id="country" placeholder="Enter your country" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city"><i class="fas fa-city"></i> City</label>
+                            <input type="text" id="city" placeholder="Enter your city" required>
+                        </div>
+                        <div id="buttons">
+                        <button type="button" class="button-secondary prev-btn" onclick="prevStep(1)">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="button" class="button-primary next-btn" onclick="nextStep(3)">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                        </div>
+                    </div>
+
+                      <!-- Step 3: Security & ID Verification -->
+                      <div class="form-section" id="step-3">
+                          <h3>Step 3: Security & ID Verification</h3>
+                          <div class="form-group">
+                              <label for="idType">ID Type</label>
+                              <select id="idType" name="idType" required>
+                                  <option value="">Select ID Type</option>
+                                  <option value="passport">Passport</option>
+                                  <option value="national_id">National ID</option>
+                                  <option value="driver_license">Driver's License</option>
+                              </select>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="idNumber">ID Number</label>
+                              <input type="text" id="idNumber" name="idNumber" placeholder="Enter your ID number" required>
+                          </div>
+                          <!-- Password Field -->
+                          <div class="form-group">
+                              <label for="password"><i class="fas fa-lock"></i> Password</label>
+                              <div class="password-container">
+                                  <input type="password" id="password" placeholder="Create a password" required onkeyup="checkPasswordStrength()">
+                                  <i class="fas fa-eye password-toggle" onclick="togglePassword('password', this)"></i>
+                              </div>
+                              <div class="password-strength-bar">
+                                  <div id="password-bar"></div>
+                              </div>
+                          </div>
+
+                          <!-- Confirm Password Field -->
+                          <div class="form-group">
+                              <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password</label>
+                              <div class="password-container">
+                                  <input type="password" id="confirmPassword" placeholder="Confirm your password" required onkeyup="validatePasswordMatch()">
+                                  <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                              </div>
+                              <small id="password-error" class="error" style="color: red;"></small>
+                              
+                          </div>
+                          <div class="form-group" id="checkbox">
+                             <label class="checkbox-label">
+                                <input type="checkbox" id="terms">
+                                <span class="custom-checkbox"></span>
+                                I agree to the<a href="#" id="openTerms">Terms & Conditions</a>
+                            </label>
+                             </div>
+                          <div id="buttons">
+                          <button type="button" class="button-secondary prev-btn" onclick="prevStep(2)">
+                              <i class="fas fa-arrow-left"></i> Previous
+                          </button>
+                          <button type="submit" class="button-primary" disabled id="submitBtn">
+                              <i class="fas fa-user-plus"></i> Create Account
+                          </button>
+                        </div>
+                      </div>
+                </form>
+            </div>
+          </div>
+          <div class="floating-circle-cta-1"></div>
+          <div class="floating-circle-cta-2"></div>
+        </div>
+      </div>
+    </div>
+      <div id="termsPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+           <h2>Terms & Conditions</h2>
+              <p>Welcome to DawnBank! By creating an account and using our services, you agree to the following terms:</p>
+
+              <ul>
+                  <li>You must provide accurate personal information during signup.</li>
+                  <li>Your account security is your responsibility; do not share your login details.</li>
+                  <li>DawnBank reserves the right to suspend accounts involved in fraudulent activities.</li>
+                  <li>Transactions may be monitored for security and compliance purposes.</li>
+                  <li>By using our services, you agree to our data protection and privacy policies.</li>
+              </ul>
+
+              <p>If you have any questions, please contact our support team. Thank you for choosing DawnBank!</p>
+
+            <button id="acceptTerms">Accept</button>
+
+        </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="/" class="logo footer-logo">
+            <div class="logo-circle">DB</div>
+            DawnBank
+          </a>
+          <p class="footer-description">Banking reimagined for the modern world. Simple, transparent, and secure.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Resources</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-title">Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">© <span id="current-year"></span> DawnBank. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scroll-to-top" class="scroll-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+<script src="assets/js/script.js"></script>
+  <script src="assets/js/testimonials.js"></script>
+  <script src="assets/js/register_ajax.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/form.js"></script>
+  <script src="assets/js/terms_popup.js"></script>
+  <script src="assets/js/logout.js"></script>
+  <script>
+      // Mobile menu toggle
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  
+  function openMenu() {
+    mobileMenu.style.transform = "translateX(0)";
+    menuIcon.style.display = "none";
+    closeIcon.style.display = "block";
+    document.body.classList.toggle('overflow-hidden');
+  }
+  function closeMenu(){
+    mobileMenu.style.transform = "translateX(100%)";
+    menuIcon.style.display = "block";
+    closeIcon.style.display = "none";
+    document.body.classList.toggle('overflow-hidden');
+  }
+  menuIcon.addEventListener('click', openMenu);
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  </script>
+</body>
+</html>
